@@ -64,7 +64,7 @@ class Video {
 		return writer.toString();
 	}
 
-	public static var keyCodes = [37, 38, 39, 40, 88, 32]; // 37-40: Arrow keys, 88: X, 32: Space
+	public static var keyCodes = [88, 32]; // 88: X, 32: Space
 
 	public static function toActionCode(keyCode:Int):Option<Int> {
 		for (i in 0...keyCodes.length) {
@@ -80,15 +80,7 @@ class Video {
 
 	public static function showActionCode(actionCode:Int):String {
 		switch actionCode {
-			case 0:
-				return "Left   ";
-			case 1:
-				return "Up     ";
-			case 2:
-				return "Right  ";
-			case 3:
-				return "Down   ";
-			case 4 | 5:
+			case 0 | 1:
 				return "Action ";
 		}
 		return "???    ";
